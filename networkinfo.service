@@ -1,0 +1,11 @@
+[Unit]
+Description=Run networkinfo.sh script at startup
+After=network-online.target
+Requires=network-online.target
+
+[Service]
+ExecStart=/var/www/html/networkinfo.sh
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
